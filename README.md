@@ -3,7 +3,7 @@ license: cc-by-4.0
 task_categories:
 - text-classification
 - question-answering
-- information-retrieval
+- text-retrieval
 - feature-extraction
 - zero-shot-classification
 language:
@@ -40,11 +40,11 @@ tags:
 - criminal-law-reforms-2024
 - ncrb
 - sankalan
-- 1860
-- 1973
-- 1872
-- 2023
-- 2024
+- "1860"
+- "1973"
+- "1872"
+- "2023"
+- "2024"
 configs:
 - config_name: ipc_to_bns
   data_files: "ipc_to_bns.json"
