@@ -1,0 +1,6 @@
+*.html
+*.download
+*_files/
+__pycache__/
+*.pyc
+*.py
