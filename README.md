@@ -61,28 +61,25 @@ configs:
   data_files: "bsa_to_iea.json"
 ---
 
-<div align="center">
+<h1 align="center">⚖️ IPC-BNS-CrPC-BNSS-IEA-BSA Respective Old &amp; New Sections Mapping</h1>
+<h3 align="center"><em>Official Concordance Suite: Old Criminal Laws (1860, 1872, 1973) ⇄ New Criminal Laws (2023, 2024)</em></h3>
+<h4 align="center">IPC ⇄ BNS &nbsp;|&nbsp; CrPC ⇄ BNSS &nbsp;|&nbsp; IEA ⇄ BSA</h4>
 
-# ⚖️ 🇮🇳 INDIAN CRIMINAL LAWS MAPPING CONCORDANCE SUITE
-## *Old Criminal Laws (1860, 1872, 1973) ⇄ New Criminal Laws (2023, 2024)*
-### **IPC ⇄ BNS | CrPC ⇄ BNSS | IEA ⇄ BSA**
-
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Dataset Format: JSON](https://img.shields.io/badge/Format-Production_JSON-green.svg)](#)
-[![Statutory Coverage: 100%](https://img.shields.io/badge/Statutory_Coverage-100%25_Verified-brightgreen.svg)](#)
-[![Unique Records: 2,629](https://img.shields.io/badge/Total_Mappings-2%2C629_Records-orange.svg)](#)
-[![HuggingFace: GSMS-B](https://img.shields.io/badge/Curated_by-GSMS--B-purple.svg)](https://huggingface.co/GSMS-B)
-
-<br/>
-
-<!-- Poster / Banner Section -->
 <p align="center">
-  <img src="assets/poster.png" alt="Indian Criminal Laws Mapping Concordance (IPC, BNS, CrPC, BNSS, IEA, BSA)" width="100%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+  <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://img.shields.io/badge/License-CC_BY_4.0-blue.svg" alt="License: CC BY 4.0"/></a>
+  <img src="https://img.shields.io/badge/Format-Production_JSON-green.svg" alt="Dataset Format: JSON"/>
+  <img src="https://img.shields.io/badge/Statutory_Coverage-100%25_Verified-brightgreen.svg" alt="Statutory Coverage: 100%"/>
+  <img src="https://img.shields.io/badge/Total_Mappings-2%2C629_Records-orange.svg" alt="Unique Records: 2,629"/>
+  <a href="https://huggingface.co/GSMS-B"><img src="https://img.shields.io/badge/Curated_by-GSMS--B-purple.svg" alt="HuggingFace: GSMS-B"/></a>
 </p>
 
-*Curated, engineered, and mathematically verified by **[GSMS-B](https://huggingface.co/GSMS-B)** with ❤️ for the Indian Legal AI Community, Judicial Researchers, and NLP Practitioners.*
+<p align="center">
+  <img src="assets/poster.png" alt="IPC-BNS-CrPC-BNSS-IEA-BSA Respective Old-New Sections Mapping" width="100%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+</p>
 
-</div>
+<p align="center">
+  <em>Curated, engineered, and verified by <strong><a href="https://huggingface.co/GSMS-B">GSMS-B</a></strong> with ❤️ for the Indian Legal AI Community, Judicial Researchers, and NLP Practitioners.</em>
+</p>
 
 ---
 
@@ -103,7 +100,7 @@ This repository provides **the definitive, bi-directional, machine-readable data
 
 ---
 
-## 🌐 Official Source Data & Methodology
+## 🌐 Official Source Data & Verification
 
 The dataset is derived directly from the official concordance tables published by the **National Crime Records Bureau (NCRB)** under the **Ministry of Home Affairs (MHA), Government of India**, which developed the official *Sankalan* legal transition portal and mobile application:
 - **NCRB Sankalan BNS Table:** [https://www.ncrb.gov.in/uploads/SankalanPortal/SectionTableBNS.html](https://www.ncrb.gov.in/uploads/SankalanPortal/SectionTableBNS.html)
@@ -111,13 +108,7 @@ The dataset is derived directly from the official concordance tables published b
 - **NCRB Sankalan BSA Table:** [https://www.ncrb.gov.in/uploads/SankalanPortal/SectionTableBSA.html](https://www.ncrb.gov.in/uploads/SankalanPortal/SectionTableBSA.html)
 - **NCRB CyTrain Police Portal:** [https://cytrain.ncrb.gov.in/staticpage/web_pages/Index.html](https://cytrain.ncrb.gov.in/staticpage/web_pages/Index.html)
 
-### Forensic Curation Pipeline:
-1. **Unmerged Grouped Provisions:** In the raw comparative tables, when multiple legacy provisions were consolidated into a single new section (e.g. IPC 54 & 55 into BNS 5, IPC 231–260 into BNS 178–181, IPC 376DA & 376DB into BNS 70(2), and IEA 3 & 4 into BSA 2), each provision was unmerged into its own standalone, atomic lookup record with dedicated statutory metadata.
-2. **Disambiguation of Multi-Term Definitions:** Provisions defining multiple independent terms (such as IPC 10 for *Man/Woman*, IPC 23 for *Wrongful Gain/Loss*, IPC 33 for *Act/Omission*, and IPC 158) are disambiguated so that **every record possesses a unique statutory ID and lookup key**.
-3. **Dedicated Parent Section Keys:** In production legal search, queries are frequently conducted using base section numbers (`"173"`, `"154"`, `"61"`, `"260"`, `"10"`, `"23"`, `"351"`). Standalone parent records were engineered for every section, ensuring root queries never return empty responses.
-4. **Resolution of Sub-Section Annotations:** Fixed table scraper artifacts where green sub-section tags (such as `BNSS 173(3)`, `BNSS 193(8)`, `BNSS 63(ii)`, and `BNSS 269(7)`) accidentally overwrote parent sections. Main sections (e.g. `CrPC 154` FIR, `CrPC 173` Chargesheet) map to the root new sections (`BNSS 173`, `BNSS 193`), while newly introduced subsections are accurately tagged as `"New Sub-Section"`.
-5. **Gazetted Statutory Chapter Binding:** Every single section and subsection is strictly bound to its official statutory chapter as enacted in the Gazettes of India.
-6. **Automated Audit Suites:** 100% verified against 6 automated validation test suites ensuring zero duplicate IDs, zero missing sections, zero `Section None` carry-over artifacts, and zero leaked HTML footnotes.
+All provisions are cross-referenced with the official statutory Acts published in the **Gazette of India**, ensuring 100% legislative completeness, verified statutory chapter mappings, and exact bi-directional concordance.
 
 ---
 
@@ -140,7 +131,7 @@ The dataset is derived directly from the official concordance tables published b
 >    * `bsa_to_iea.json`: Bharatiya Sakshya Adhiniyam, 2023 $\rightarrow$ Indian Evidence Act, 1872 [186 records]
 
 ```
-📂 indian-criminal-laws-respective-mappings/
+📂 ipc-bns-crpc-bnss-iea-bsa-respective-old-new-sections-mapping/
 ├── 📄 ipc_to_bns.json       # Substantive Law:   IPC (1860)  -> BNS (2023)
 ├── 📄 bns_to_ipc.json       # Substantive Law:   BNS (2023)  -> IPC (1860)
 ├── 📄 crpc_to_bnss.json     # Procedural Law:    CrPC (1973) -> BNSS (2023)
