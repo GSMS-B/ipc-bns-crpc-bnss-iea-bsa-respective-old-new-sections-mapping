@@ -108,7 +108,7 @@ The dataset is derived directly from the official concordance tables published b
 - **NCRB Sankalan BSA Table:** [https://www.ncrb.gov.in/uploads/SankalanPortal/SectionTableBSA.html](https://www.ncrb.gov.in/uploads/SankalanPortal/SectionTableBSA.html)
 - **NCRB CyTrain Police Portal:** [https://cytrain.ncrb.gov.in/staticpage/web_pages/Index.html](https://cytrain.ncrb.gov.in/staticpage/web_pages/Index.html)
 
-All provisions are cross-referenced with the official statutory Acts published in the **Gazette of India**, ensuring 100% legislative completeness, verified statutory chapter mappings, and exact bi-directional concordance.
+
 
 ---
 
